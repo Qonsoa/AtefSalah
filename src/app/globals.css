@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+
+html, body {
+  background-color: #17171b;
+  color: #fff;
+  font-family: arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+button, a {
+  -webkit-tap-highlight-color: transparent; /* يمنع اللون الأزرق عند الضغط */
+}
+
+button:focus, a:focus {
+  outline: none;
+}
+
+button:active, a:active {
+  outline: none;
+}
+
+@layer utilities {
+  @keyframes floatDiagonalReverse {
+    0%, 100% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(-8px, 8px);
+    }
+  }
+
+  .animate-float {
+    animation: floatDiagonalReverse 5s ease-in-out infinite;
+  }
+
+  @keyframes textFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-textFade {
+    animation: textFade 1.2s ease-out both;
+  }
+
+  @keyframes pulseOpacity {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .animate-pulseOpacity {
+    animation: pulseOpacity 4s ease-in-out infinite;
+  }
+}
+
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 9s ease infinite alternate;
+  -moz-animation: animatedgradient 9s ease infinite alternate;
+  animation: animatedgradient 9s ease infinite alternate;
+}
+@keyframes animatedgradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
